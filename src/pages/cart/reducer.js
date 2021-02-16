@@ -1,5 +1,5 @@
 import cartactiontype from './carttype';
-import {cartitem, removeItem, addWishlist} from './util'
+import {cartitem, removeItem, addWishlist,getOrderedItem} from './util'
 const initial_state ={
     collection:[],
     hidden :false,
@@ -12,6 +12,7 @@ const initial_state ={
     selectedCategory:['Hats','Womens','Sneakers','Jackets','Mens'],
     currentselectedCategory:[],
     search:'Brown',
+    orderedItems:[],
 }
 
 export const cartReducer = (state =initial_state,action) =>{
@@ -69,10 +70,25 @@ export const cartReducer = (state =initial_state,action) =>{
             ...state ,
             wishlist:addWishlist(state.wishlist, action.payload)
         }
+
         case cartactiontype.SEARCH : 
         return{
            ...state ,
            search:action.payload
+        }
+
+        case cartactiontype.FINAL_CHECKOUT : 
+        return{
+           ...state ,
+           cartitems:[]
+        }
+
+        case cartactiontype.PORDER : 
+        return{
+           ...state ,
+           orderedItems:getOrderedItem(state.orderedItems,action.payload),
+        //    orderedItems:state.orderedItems.concat(action.payload),
+
         }
             default:
             return state;

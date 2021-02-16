@@ -68,3 +68,11 @@ export const fetchdataaction = (data)=>({
     payload:data
 })
 
+export const finalCheckout = ()=>({
+    type:cartactiontype.FINAL_CHECKOUT,
+})
+
+export const porder = (data)=>({
+    type:cartactiontype.PORDER,
+    payload:data
+})

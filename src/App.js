@@ -9,6 +9,9 @@ import Checkout from './pages/cart/checkout'
 import WishList from './pages/cart/wishlist'
 import ProtecteRoute  from './protectedRoute';
 import ProductDetail from './pages/cart/productdetail';
+import OrderDetails from './pages/cart/orderdetails';
+
+
 
 const App =() =>{
   return (
@@ -21,6 +24,7 @@ const App =() =>{
       <ProtecteRoute path ='/checkout' component ={Checkout} exact />
       <ProtecteRoute path ='/wishlist' component ={WishList} exact/>
       <ProtecteRoute path ='/productdetails' component ={ProductDetail} exact />
+      <ProtecteRoute path ='/orderdetails' component ={OrderDetails} exact />
       <Route render={() => <Redirect to="/" />} />
      </Switch>
   </Router>

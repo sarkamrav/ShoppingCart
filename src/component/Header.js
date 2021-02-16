@@ -52,19 +52,19 @@ const searchData =(e,search,update)=>{
 update(e.target.value)
 // searchbox();
 }
- const logout =()=>{
-   localStorage.removeItem('persist:root');
-   localStorage.removeItem('loggedIn');
-   window.location.reload();
-   window.location = "http://localhost:3000/login";
- }
 const  Header =(props) => {
   const [selectedItem,updateItem]=useState([]);
   const [serachField,updatedSearchField]=useState('');
   useEffect(()=>{
     props.searchbox(serachField);
   },[serachField])
- 
+  
+  const logout =()=>{
+    localStorage.removeItem('persist:root');
+    localStorage.removeItem('loggedIn');
+    // window.location.reload();
+    window.location.href = "http://localhost:3000/login";
+  }
   useEffect(()=>{
     props.selectbox(selectedItem);
   },[selectedItem])
@@ -80,7 +80,9 @@ return <div>
             <label>Search</label>
           <input type ='text' value ={serachField} onChange ={(e)=>searchData(e,serachField,updatedSearchField)}/>
           </div>
+          <button onClick={()=>props.history.push('/orderdetails')} >Order Details</button>
           <button onClick={()=>logout()} >Logout</button>
+
        </div>
        <CartDropdown />
       <div className='option'>       

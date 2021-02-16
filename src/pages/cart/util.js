@@ -32,3 +32,17 @@ export const addWishlist = (item,currentitem)=>{
 
 }
 
+export const getOrderedItem =(item,payload)=>{
+  const dateItem = payload.map(data =>{
+    return {...data, date:Date.now()}
+  })
+  console.log("dateItem",dateItem);
+  //  return {...item ,dateItem}
+ return  item.concat(dateItem)
+}
+
+
+
+// return currentItem;
+// [...state.orderedItems, action.payload, Date.now()]
+// }

@@ -14,6 +14,8 @@ const cartactiontype = {
     SELECT_SIZE:'SELECT_SIZE',
     CHECKBOX:'CHECKBOX',
     LOGOUT:'LOGOUT',
-    SEARCH:'SEARCH'
+    SEARCH:'SEARCH',
+    FINAL_CHECKOUT:'FINAL_CHECKOUT',
+    PORDER:'PORDER',
 }
 export default cartactiontype;

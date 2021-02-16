@@ -26,7 +26,6 @@ background-size:cover;
     &:last-child {
       margin-left: 7.5px;
     }
-   
   
     .content {
       height: 90px;

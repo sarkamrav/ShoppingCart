@@ -22,7 +22,6 @@ const Wrapper = styled.div`
       grid-gap:2%;
       grid-template-columns:repeat(auto-fill,minmax(21%,1fr));
     }
-
   `;
  const CollectionPreview = ({title, items, selctedItem,selectedCate,searchstring}) => {
     return (

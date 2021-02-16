@@ -25,3 +25,10 @@ export const wishlistCount = createSelector(
     [wishList],
     wishlistitem => Object.keys(wishlistitem).length
     );
+
+export const getPrice = createSelector(
+    [selectcartitems],
+    cartitem=>cartitem.reduce((sum,cartitem)=>{  
+        return (cartitem.quantity*cartitem.price)+sum;
+         },0)
+);

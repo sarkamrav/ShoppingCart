@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import CheckoutItem from './checkoutitem';
 import Stripebutton from'../stripepayment/stripebutton';
+import {getPrice} from '../cart/cartselector'
 const Wrapper = styled.div`
     width: 55%;
     min-height: 90vh;
@@ -34,7 +35,7 @@ const Wrapper = styled.div`
       font-size: 36px;
     }
   `;
-const checkout = ({cartItem}) => {
+const checkout = ({cartItem,cartPrice}) => {
   const getPrice = (cartItem)=>{
    return cartItem.reduce((sum,cartitem)=>{  
       if(cartitem.price) return (cartitem.quantity*cartitem.price)+sum;
@@ -63,15 +64,16 @@ const checkout = ({cartItem}) => {
         {cartItem. length > 0 ? cartItem.map(cartItem =><CheckoutItem cartItem ={cartItem} />) : <h3>No item to check out</h3>}
         {cartItem. length > 0 &&  <Fragment> 
           <div>total price</div>
-        <div>{getPrice(cartItem)}</div> </Fragment> } 
+        <div>{cartPrice}</div> </Fragment> } 
 
-        {cartItem. length > 0 &&   <Stripebutton price ={getPrice(cartItem)}/>}
+        {cartItem. length > 0 &&   <Stripebutton cartItem ={cartItem} price ={getPrice(cartItem)}/>}
         </Wrapper>
     )
 }
 
 const mapStateToProps =(state)=>({
-    cartItem : state.cartReducer.cartitems
+    cartItem : state.cartReducer.cartitems,
+    cartPrice:getPrice(state)
 })
 
 export default withRouter(connect(mapStateToProps)(checkout))
