@@ -27,7 +27,7 @@ function* loggedIn(action) {
   if(loggedIn){
     yield put(valid())
     try{
-      const user = yield call(fetchData, { method: 'get', url: `http://localhost:3000/json/shopdata.json` })
+      const user = yield call(fetchData, { method: 'get', url: `/json/shopdata.json` })
        console.log("apidata",user);
         yield put(fetchdataaction(user.data));
         } catch(e){
