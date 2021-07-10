@@ -11,7 +11,7 @@ function* loggedIn(action) {
     let loggedIn = false;
     console.log("payloadsaga",action.payload);
     // const data = yield call(fetchData);
-    const data = yield call(fetchData, { method: 'get', url: `http://localhost:3000/json/passwords.json` })
+    const data = yield call(fetchData, { method: 'get', url: '/json/passwords.json' })
     //  yield put(logIn(data))
     let userdata = action.payload;
     data.data.map((item)=>{
