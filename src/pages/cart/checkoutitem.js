@@ -11,7 +11,6 @@ const Wrapper = styled.div`
     padding: 15px 0;
     font-size: 20px;
     align-items: center;
-  
     .image-container {
       width: 23%;
       padding-right: 15px;
@@ -25,7 +24,6 @@ const Wrapper = styled.div`
     .price {
       width: 23%;
     }
-  
     .quantity {
       display: flex;
       padding-left: 0px;
@@ -34,7 +32,6 @@ const Wrapper = styled.div`
         cursor:pointer;
       }
     }
-  
     .remove-button {
       padding-left: 12px;
       cursor: pointer;

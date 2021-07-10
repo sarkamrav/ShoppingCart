@@ -20,7 +20,7 @@ const ProductDetail = (props) =>{
 
     const queryParams = new URLSearchParams(props.location.search);
     const matchid = queryParams.get('id');
-
+   
     const data = getdata(cartitem,matchid)
         const arr =[];
         for(var i = 0; i < data.length;i++){
@@ -34,8 +34,8 @@ const ProductDetail = (props) =>{
    function todo(){
     updatedcart(1);
     addtocart(aaa[0])
-
     }
+
     return (
         <Wrapper>
         <div>

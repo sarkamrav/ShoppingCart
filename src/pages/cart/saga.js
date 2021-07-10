@@ -4,6 +4,8 @@ import cartactiontype from './carttype';
 import fetchData from '../fetchdata';
 import {valid,invalid,fetchdataaction} from '../cart/cartaction';
 
+/*Genereator funvtion */
+
 function* loggedIn(action) {
   try{
     let loggedIn = false;

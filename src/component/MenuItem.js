@@ -54,6 +54,11 @@ background-size:cover;
 const MenuItem = ({title,id,imageUrl, size,linkUrl,match,fetchdata, ...props}) => {
 
   console.log("histiry",props)
+  
+  console.log("match",match)
+  
+  console.log("location",props.location)
+
     return (
         <Wrapper img ={imageUrl} size ={size}>
       

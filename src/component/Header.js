@@ -39,7 +39,6 @@ padding: 20px;
         selectedItem = selectedItem.concat(e.target.value)
         console.log("vvvvvvvvvvvvvv",selectedItem);
         updateItem(selectedItem);
-      
       }
     } else{
       selectedItem = selectedItem.filter((data)=>data.toString() != e.target.value.toString());
@@ -81,7 +80,7 @@ return <div>
           <input type ='text' value ={serachField} onChange ={(e)=>searchData(e,serachField,updatedSearchField)}/>
           </div>
           <button onClick={()=>props.history.push('/orderdetails')} >Order Details</button>
-          <button onClick={()=>logout()} >Logout</button>
+          <button  aria-label ="logout"   onClick={()=>logout()} >Logout</button>
 
        </div>
        <CartDropdown />
@@ -96,7 +95,6 @@ return <div>
             <option value ='xl'>XtraLarge</option>
             <option value = 'xxl'>XtraSmall</option>
             <option value = 'select'>None</option>
-
           </select>
         </div>
         <div>
@@ -109,6 +107,8 @@ return <div>
             ))}
           </div>
         <CartIcon/>   
+        <h2>Pmax Studio</h2>
+        <a href ="https://www.youtube.com/watch?v=ghPC6wozctU">click here</a>
       </div>
       </Wrapper>
 )

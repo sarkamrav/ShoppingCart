@@ -10,4 +10,4 @@ const fetchData = async(url) =>{
   
 }
 
-export default fetchData;
+export default fetchData; 

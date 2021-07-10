@@ -13,6 +13,7 @@ const initial_state ={
     currentselectedCategory:[],
     search:'Brown',
     orderedItems:[],
+    count:0
 }
 
 export const cartReducer = (state =initial_state,action) =>{

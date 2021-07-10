@@ -32,6 +32,7 @@ margin-top:10%;
   width:100%
 }
 `
+
 const validate = values => {
   const errors = {}
   console.log("error",values)
@@ -45,6 +46,7 @@ const validate = values => {
   }
   return errors
 }
+
 
 
 let Login = (props) => {
@@ -65,6 +67,7 @@ type={type}
 </div>
   )
 }
+
 
   const submit = (submitdata)=>{
   let loggedIn = false;
@@ -92,18 +95,23 @@ type={type}
     </Wrapper>
     )
 }
+
 const mapStateToProps = state=>({
   isLoggedIn : state.cartReducer.loggedIn,
   errorMessage : state.cartReducer.ErrorMessage,
 })
+
 
 const mapDispatchToProps = dispatch=>({
   login : (values)=>{dispatch(logIn(values))},
   // jsondata :()=>{dispatch(getDataJson())}
 })
 
+
 Login  =  reduxForm({
     form : 'login',
     validate
 })(Login)
+
+
 export default connect(mapStateToProps,mapDispatchToProps)(Login)
